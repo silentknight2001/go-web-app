@@ -39,6 +39,8 @@ jobs:
             uses: golangci/golangci-lint-action@v6  # This is correct
             with:
               version: v1.56.2  # Correct version syntax
+              install-mod: binary
+              only-new-issues: false 
 
     push:
       runs-on: ubuntu-latest
@@ -85,7 +87,7 @@ jobs:
             git config --global user.name "silenknight2001"
             git add helm/go-web-app-chart/values.yml
             git commit -m "Updated tag in helm chart"
-            git push
+            git push 
 
 
 
